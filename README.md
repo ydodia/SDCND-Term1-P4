@@ -71,8 +71,7 @@ Choice of windowing, or selecting the four-sided polygon, for the perspective tr
 
 Outlier lines were ones that were typically noisy and lacked good data points. I thresholded these out of each Line's data and used averaging to maintain a smoother fit.
 
-In the future, I would focus on three areas: better image pre-processing, robust statistical analysis of lane markers and a better Line class adding look-ahead and smarted line following. I will continue and attempt fitting the harder challenge video.
-
+In the future, I would focus on three areas: better image pre-processing, robust statistical analysis of lane markers and a better Line class adding look-ahead and smarted line following.
 
 
 
