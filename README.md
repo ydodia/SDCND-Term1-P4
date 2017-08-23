@@ -18,7 +18,7 @@ I did a perspective transform prior to producing the binary thresholded images. 
 ![Original and Warped][warped]
 
 #### 3 | Gradients and Binary Thresholding 
-I experimented with some simple Sobel, color channel and magnitude thresholding. My resulting binary thresholded image used a mixture of magnitude thresholding on S and V channels combined with color thresholding on S and R channels. An example result would be:
+I experimented with some simple Sobel, color channel and magnitude thresholding. My resulting binary thresholded image used a mixture of color thresholding, grabbing yellow from the HSV image, white from HSV, white from HLS and white from the RGB image. An example result would be:
 
 [threshold_example]:./threshold.png
 ![Binary Thresholded Result][threshold_example]
@@ -46,13 +46,21 @@ The pipeline works pretty well against the simple project video. An example outp
 [pipeline_example]:./pipeline_output.png
 ![Example Output from Pipeline][pipeline_example]
 
-A snippet of my processed `project_video` is shown below (GIF):
+A snippet (25s) of my processed `project_video` is shown below (GIF):
 
 [final]:./project_video_output.gif
 ![Example Output from Pipeline][final]
 
 The [Full MP4 video](https://github.com/ydodia/SDCND-Term1-P4/blob/master/project_video_output.mp4) is linked from my GitHub.
 
+#### 7 | Challenge Video
+Using the yellow and white color thresholding, I was able to extract the lane lines better and successfully identify lanes in the challenge video:
+
+
+[challenge]:./challenge_video_output.gif
+![Example Output from Pipeline][challenge]
+
+The [challenge video](https://github.com/ydodia/SDCND-Term1-P4/blob/master/challenge_video_output.mp4) is linked from my GitHub.
 
 ### Conclusion
 I ran into several difficulties; in particular, with image pre-processing, windowing prior to the perspective transform, finding the lane lines and finally, dealing with poor or outlier lane lines.
@@ -63,7 +71,7 @@ Choice of windowing, or selecting the four-sided polygon, for the perspective tr
 
 Outlier lines were ones that were typically noisy and lacked good data points. I thresholded these out of each Line's data and used averaging to maintain a smoother fit.
 
-In the future, I would focus on three areas: better image pre-processing, robust statistical analysis of lane markers and a better Line class adding look-ahead and smarted line following.
+In the future, I would focus on three areas: better image pre-processing, robust statistical analysis of lane markers and a better Line class adding look-ahead and smarted line following. I will continue and attempt fitting the harder challenge video.
 
 
 
